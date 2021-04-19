@@ -6,6 +6,7 @@ vnoremap < <gv
 set clipboard+=unnamed
 set hlsearch
 set smartcase
+set number
 
 syntax on
 colorscheme molokai
