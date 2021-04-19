@@ -38,6 +38,8 @@ casks=(
     alfred
     iterm2
     visual-studio-code
+    zoom
+    docker
 )
 
 echo "start brew cask install apps..."
