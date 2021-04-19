@@ -2,6 +2,8 @@ nnoremap x "_x
 nnoremap o o<Esc>
 vnoremap > >gv
 vnoremap < <gv
+inoremap <C-H> <Esc>ha
+inoremap <C-L> <Esc>la
 
 set clipboard+=unnamed
 set hlsearch
