@@ -40,6 +40,7 @@ casks=(
     visual-studio-code
     zoom
     docker
+    sequel-pro
 )
 
 echo "start brew cask install apps..."
