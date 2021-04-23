@@ -41,6 +41,7 @@ casks=(
     zoom
     docker
     sequel-pro
+    postman
 )
 
 echo "start brew cask install apps..."
