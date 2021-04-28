@@ -7,7 +7,7 @@ compinit -u
 alias ll='ls -laF'
 
 alias g='git'
-alias gc='git clone'
+alias gc='git checkout'
 alias gp='git pull'
 alias gs='git stash'
 
