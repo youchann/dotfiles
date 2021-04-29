@@ -42,6 +42,7 @@ casks=(
     docker
     sequel-pro
     postman
+    clipy
 )
 
 echo "start brew cask install apps..."
