@@ -21,6 +21,7 @@ formulas=(
     zsh-completions
     zsh-autosuggestions
     fzf
+    ghq
     cask
     mysql
     vim
