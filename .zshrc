@@ -43,6 +43,15 @@ function select-history() {
 zle -N select-history
 bindkey '^r' select-history
 
+# fzfとghqを連動させたディレクトリ移動
+function fgh() {
+  declare -r REPO_NAME="$(ghq list >/dev/null | fzf-tmux --reverse +m)"
+  [[ -n "${REPO_NAME}" ]] && cd "$(ghq root)/${REPO_NAME}"
+}
+
+zle -N fgh
+bindkey '^f' fgh
+
 # git
 autoload -Uz vcs_info
 setopt prompt_subst
