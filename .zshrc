@@ -50,7 +50,7 @@ function fgh() {
 }
 
 zle -N fgh
-bindkey '^f' fgh
+bindkey '^e' fgh
 
 # git
 autoload -Uz vcs_info
