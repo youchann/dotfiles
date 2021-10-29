@@ -45,6 +45,7 @@ casks=(
     postman
     clipy
     github
+    notion
 )
 
 echo "start brew cask install apps..."
