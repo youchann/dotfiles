@@ -48,7 +48,6 @@ function fgh() {
   declare -r REPO_NAME="$(ghq list >/dev/null | fzf-tmux --reverse +m)"
   [[ -n "${REPO_NAME}" ]] && cd "$(ghq root)/${REPO_NAME}"
 }
-
 zle -N fgh
 bindkey '^e' fgh
 
@@ -70,3 +69,4 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
