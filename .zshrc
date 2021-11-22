@@ -14,26 +14,13 @@ alias gs='git stash'
 alias d='docker'
 alias dc='docker-compose'
 
-# 同時に起動しているzshの間でhistoryを共有する
-setopt share_history
-
-# 同じコマンドをhistoryに残さない
-setopt hist_ignore_all_dups
-
-# スペースから始まるコマンドをhistoryに残さない
-setopt hist_ignore_space
-
-# historyに保存するときに余分なスペースを削除する
-setopt hist_reduce_blanks
-
-# 高機能なワイルドカード展開を使用する
-setopt extended_glob
-
-# cd無しでもディレクトリ移動
-setopt auto_cd
-
-# コマンドのスペルミスを指摘
-setopt correct
+setopt share_history        # 同時に起動しているzshの間でhistoryを共有する
+setopt hist_ignore_all_dups # 同じコマンドをhistoryに残さない
+setopt hist_ignore_space    # スペースから始まるコマンドをhistoryに残さない
+setopt hist_reduce_blanks   # historyに保存するときに余分なスペースを削除する
+setopt extended_glob        # 高機能なワイルドカード展開を使用する
+setopt auto_cd              # cd無しでもディレクトリ移動
+setopt correct              # コマンドのスペルミスを指摘
 
 # fzfの設定
 function select-history() {
@@ -67,6 +54,10 @@ PROMPT='[%B%F{red}%n@%m%f%b:%F{green}%~%f]%F{cyan}$vcs_info_msg_0_%f%F{yellow}$%
 # 候補を表示してくれるやつ
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
-# nodebrew
+# node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# golang
+export GOPATH=$HOME
+export PATH=$PATH:$GOPATH/bin
 
