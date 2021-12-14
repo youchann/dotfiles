@@ -46,6 +46,7 @@ casks=(
     clipy
     github
     notion
+    anki
 )
 
 echo "start brew cask install apps..."
