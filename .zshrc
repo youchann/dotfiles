@@ -1,3 +1,6 @@
+# for M1 Mac
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
 if [ -e /usr/local/share/zsh-completions ]; then
     fpath=(/usr/local/share/zsh-completions $fpath)
 fi
