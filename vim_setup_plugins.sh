@@ -9,7 +9,7 @@ git clone https://github.com/tomasr/molokai
 mv molokai/colors/molokai.vim ~/.vim/colors/
 
 # install Vundle
-git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vi
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 **************************************************
 VIM PLUGINS SETUP FINISHED! bye.
