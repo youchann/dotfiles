@@ -36,14 +36,12 @@ casks=(
     google-chrome
     google-japanese-ime
     slack
-    alfred
+    raycast
     iterm2
     visual-studio-code
     zoom
     docker
     sequel-ace
-    postman
-    clipy
     github
     notion
     anki
