@@ -41,7 +41,7 @@ casks=(
     visual-studio-code
     zoom
     docker
-    sequel-pro
+    sequel-ace
     postman
     clipy
     github
