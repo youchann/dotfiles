@@ -59,8 +59,3 @@ source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # node
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-
-# golang
-export GOPATH=$HOME
-export PATH=$PATH:$GOPATH/bin
-
