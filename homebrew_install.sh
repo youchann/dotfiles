@@ -18,13 +18,13 @@ formulas=(
     wget
     curl
     tree
-    zsh-completions
-    zsh-autosuggestions
     fzf
     ghq
     cask
     mysql
     vim
+    awscli
+    jq
 )
 
 echo "start brew install apps..."
@@ -33,11 +33,9 @@ for formula in "${formulas[@]}"; do
 done
 
 casks=(
-    google-chrome
-    google-japanese-ime
     slack
     raycast
-    iterm2
+    warp
     visual-studio-code
     zoom
     docker
@@ -45,6 +43,10 @@ casks=(
     github
     notion
     anki
+    aws-vault
+    arc
+    brave-browser
+    google-cloud-sdk
 )
 
 echo "start brew cask install apps..."
