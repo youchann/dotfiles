@@ -44,7 +44,6 @@ casks=(
     notion
     anki
     aws-vault
-    arc
     brave-browser
     google-cloud-sdk
 )

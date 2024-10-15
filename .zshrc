@@ -1,3 +1,6 @@
+# Amazon Q pre block. Keep at the top of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
+# for M1 Mac
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
 autoload -U compinit
@@ -29,3 +32,12 @@ export PATH=$PATH:$GOPATH/bin
 
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Amazon Q post block. Keep at the bottom of this file.
+[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
