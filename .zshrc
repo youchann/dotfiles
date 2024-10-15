@@ -1,5 +1,3 @@
-# Amazon Q pre block. Keep at the top of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.pre.zsh"
 # for M1 Mac
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
@@ -39,5 +37,3 @@ if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Amazon Q post block. Keep at the bottom of this file.
-[[ -f "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh" ]] && builtin source "${HOME}/Library/Application Support/amazon-q/shell/zshrc.post.zsh"
