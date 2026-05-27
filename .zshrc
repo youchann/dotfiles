@@ -17,13 +17,17 @@ function f() {
 zle -N f
 bindkey '^e' f
 
-export PATH=$HOME/.nodebrew/current/bin:$PATH
+export VOLTA_HOME="$HOME/.volta"
+export PATH="$VOLTA_HOME/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 export PATH="/usr/local/opt/mysql@5.6/bin:$PATH"
 export PATH="/usr/local/opt/php@8.1/bin:$PATH"
 export GOPATH=$HOME
 export PATH=$PATH:$GOPATH/bin
+export GOPRIVATE=github.com/voyagegroup
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
 source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
@@ -33,6 +37,10 @@ if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
+
+# The following lines have been added by Docker Desktop to enable Docker CLI completions.
+fpath=(/Users/ca02502/.docker/completions $fpath)
+# End of Docker CLI completions
 
 # 補完の初期化はここで1回だけ。ダンプが24時間以上古いときだけ再生成し、
 # それ以外はキャッシュ利用（-C）でセキュリティ監査をスキップして高速化する
@@ -45,3 +53,4 @@ else
 fi
 unset _zcompdump_old
 
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
