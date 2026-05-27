@@ -1,9 +1,6 @@
 # for M1 Mac
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
-autoload -U compinit
-compinit -u
-
 alias ll='ls -laF'
 alias g='git'
 alias gc='git checkout'
@@ -36,4 +33,15 @@ if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
+
+# 補完の初期化はここで1回だけ。ダンプが24時間以上古いときだけ再生成し、
+# それ以外はキャッシュ利用（-C）でセキュリティ監査をスキップして高速化する
+autoload -Uz compinit
+_zcompdump_old=(${ZDOTDIR:-$HOME}/.zcompdump(Nmh+24))
+if (( $#_zcompdump_old )); then
+  compinit
+else
+  compinit -C
+fi
+unset _zcompdump_old
 
