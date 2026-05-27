@@ -13,7 +13,10 @@ echo "start setup..."
 for f in .??*; do
     [ "$f" = ".git" ] && continue
 
-    ln -snfv "$THIS_DIR"/"$f" ~/
+    # リンク先はディレクトリ(~/)ではなくリンク名まで明示する。
+    # GNU coreutils の ln では `ln -snf src ~/` がトレイリングスラッシュを
+    # 別解釈して失敗するため、~/"$f" と明示して BSD/GNU 双方で動くようにする
+    ln -snfv "$THIS_DIR"/"$f" ~/"$f"
 done
 
 cat << END
