@@ -28,22 +28,16 @@ export PATH=$PATH:$GOPATH/bin
 export GOPRIVATE=github.com/voyagegroup
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
-source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
-source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/path.zsh.inc'; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
 
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
 fpath=(/Users/ca02502/.docker/completions $fpath)
 # End of Docker CLI completions
 
 # 補完の初期化はここで1回だけ。ダンプが24時間以上古いときだけ再生成し、
-# それ以外はキャッシュ利用（-C）でセキュリティ監査をスキップして高速化する
+# それ以外はキャッシュ利用(-C)でセキュリティ監査をスキップして高速化する。
+# gcloud completion より前に実行することで、向こうが compdef 未定義時に
+# 独自の compinit を呼ぶ(=二重実行)のを防ぐ
 autoload -Uz compinit
 _zcompdump_old=(${ZDOTDIR:-$HOME}/.zcompdump(Nmh+24))
 if (( $#_zcompdump_old )); then
@@ -53,4 +47,11 @@ else
 fi
 unset _zcompdump_old
 
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+source "$(brew --prefix)/share/google-cloud-sdk/path.zsh.inc"
+source "$(brew --prefix)/share/google-cloud-sdk/completion.zsh.inc"
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/youchan/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/youchan/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/youchan/google-cloud-sdk/completion.zsh.inc'; fi
